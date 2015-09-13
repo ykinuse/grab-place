@@ -1,11 +1,32 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:baselineAligned="false">
-    <TextView
-        android:id="@+id/location_text"
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/main_drawer_layout"
+    android:name="com.google.android.gms.maps.MapFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/main_content_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"/>
+
+
+    </RelativeLayout>
+
+    <com.grabtaxi.grabplace.view.NavigationDrawerView
+        android:id="@+id/main_drawer_view"
+        layout="@layout/view_navigation_list"
+        android:layout_width="@dimen/nav_drawer_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"/>
+
+</android.support.v4.widget.DrawerLayout>

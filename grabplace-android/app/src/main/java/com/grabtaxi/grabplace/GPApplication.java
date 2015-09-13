@@ -5,6 +5,7 @@ import android.app.Application;
 import com.facebook.FacebookSdk;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.grabtaxi.grabplace.services.GrabPlaceAPI;
 import com.grabtaxi.grabplace.utils.Logger;
 
 /**
@@ -20,7 +21,12 @@ public class GPApplication extends Application
     {
         super.onCreate();
 
+        // Init Facebook SDK
         FacebookSdk.sdkInitialize(this.getApplicationContext());
+
+        // Init GrabPlace API
+        GrabPlaceAPI.getInstance().initialize(this.getApplicationContext());
+
         // Retrieve Google Play Service status
         try
         {
