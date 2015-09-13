@@ -1,0 +1,13 @@
+default: &default
+  split_design_documents_per_view: true
+  default_language: javascript
+
+development:
+  <<: *default
+  database: http://127.0.0.1:5984/places
+test:
+  <<: *default
+  database: http://127.0.0.1:5984/places
+production:
+  <<: *default
+  database: http://127.0.0.1:5984/places
